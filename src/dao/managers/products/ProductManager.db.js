@@ -30,7 +30,12 @@ class ProductManager {
   async deleteProduct(id) {
     const result = await productsModel.deleteOne({ _id: id });
 
+    if (result.deletedCount === 0) {
+        return null; // Indicar que el producto no se encontró
+    }
+
     return result;
-  }
+}
+
 }
 module.exports = new ProductManager();

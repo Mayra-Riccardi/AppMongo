@@ -43,7 +43,7 @@ router.post("/", async (req, res) => {
       const product = await productManager.addProduct(body);
   
       if (product) {
-        const updatedProducts = await productManager.getProductos();
+        const updatedProducts = await productManager.getProducts();
         req.io.emit('updateProducts', updatedProducts); // Aquí está la emisión del evento 'updateProducts'
         res.status(200).json({ status: 200, message: 'Product added successfully', product });
 
@@ -61,7 +61,7 @@ router.put('/:pid', async (req, res) => {
     const { body } = req;
     const id = req.params.pid;
     try {
-        const product = await productManager.updateProduct(+id, body);
+        const product = await productManager.updateProduct(id, body);
 
         if (!product) {
             res.status(404).json({ error: `The product with the id ${id} is not found, please try with a different ID` });
@@ -79,12 +79,12 @@ router.put('/:pid', async (req, res) => {
 router.delete("/:pid", async (req, res) => {
     const id = req.params.pid;
     try {
-        const product = await productManager.deleteProduct(+id);
+        const product = await productManager.deleteProduct(id);
 
-        if (!product) {
+        if (product === null) {
             return res.status(404).json({ status: 404, message: `The product with the id ${id} is not found, please try with a different ID` });
         } 
-        const updatedProducts = await productManager.getProductos();
+        const updatedProducts = await productManager.getProducts();
         req.io.emit('updateProducts', updatedProducts); // Aquí está la emisión del evento 'updateProducts'
         return res.status(200).json({ status: 200, message: `Product with ID: ${id}, successfully deleted` });
     } catch (error) {
