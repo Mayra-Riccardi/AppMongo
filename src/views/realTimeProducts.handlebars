@@ -1,0 +1,24 @@
+<div id="products-list">
+<div id="products" class="uk-child-width-1-4@m" uk-grid>
+  {{#each products}}
+    <div>
+      <div class="uk-card uk-card-default">
+        <div class="uk-card-media-top">
+          <div class="uk-card-media-top">
+          <img src="{{ this.thumbnail }}" alt="foto producto" /> <!-- Mostrar la imagen -->
+        </div>
+        </div>
+        <div class="uk-card-body">
+          <h3 class="uk-card-title">{{ this.title }}</h3>
+          <h5>${{this.price}}</h5>
+          <button class="uk-button uk-button-secondary uk-button-small">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+</div>
+    {{!-- importamos los script de socket y el js del lado del cliente para que socket se conecte solo al usar este templates --}}
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/static/index.js"></script>
+

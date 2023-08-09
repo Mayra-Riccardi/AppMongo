@@ -1,0 +1,74 @@
+[
+  {
+    "title": "God of War",
+    "descripcion": "Acción y aventuras desarrollado por SCEA y distribuido por Sony para la consola PS 2. Es el primer juego en estrenarse.",
+    "price": 40000,
+    "thumbnail": "https://img.asmedia.epimg.net/resizer/X823qqfniPDSUXY9lR7Qnle195U=/360x203/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/XPOFAWR6AZICLFIL7ZO3EGXTHE.jpg",
+    "code": "gow",
+    "stock": 15,
+    "id": 1
+  },
+  {
+    "title": "League",
+    "descripcion": "Apasionante juego de estrategia por equipos en el que dos equipos conformados por cinco poderosos campeones se enfrentan para destruir la base del otro. Elige de entre más de 140 campeones para realizar jugadas épicas, asegurar asesinatos y destruir torretas mientras avanzas hacia la victoria.",
+    "price": 50000,
+    "thumbnail": "https://phantom-marca.unidadeditorial.es/182df07c56ace0bface5ed1cf9953dbc/crop/0x0/1980x1112/resize/1200/f/jpg/assets/multimedia/imagenes/2022/03/16/16474267987028.jpg",
+    "code": "lol",
+    "stock": 18,
+    "id": 2
+  },
+  {
+    "title": "FIFA 2023",
+    "descripcion": "EA SPORTS™ FIFA 23 lleva El Juego de Todos al campo con los torneos de la Copa Mundial de la FIFA™ masculina y femenina, la incorporación de clubes femeninos y nuevas formas de jugar tus modos favoritos.",
+    "price": 100000,
+    "thumbnail": "https://culturageek.com.ar/wp-content/uploads/2022/07/FIFA-23-modos-crossplay-ligas-y-cuando-sale-el-nuevo-juego-de-futbol-de-EA.png",
+    "code": "fif",
+    "stock": 30,
+    "id": 3
+  },
+  {
+    "title": "UFC",
+    "descripcion": "EA SPORTS UFC va más allá en lo que es realismo de los personajes y la emoción en el mundo de los videojuegos. Siente la pelea a medida que la acción, la emoción y la intensidad cobran vida en el octágono como nunca antes.",
+    "price": 35000,
+    "thumbnail": "https://prod.assets.earlygamecdn.com/images/UFC-5.jpg?mtime=1688905497",
+    "code": "uf",
+    "stock": 22,
+    "id": 4
+  },
+  {
+    "title": "Crash",
+    "descripcion": "El juego se centra alrededor de Crash Bandicoot, un marsupial mutado por el doctor psicópata Neo Cortex y su mano derecha Nitrus Brio, pero Crash intenta parar los planes de su creador (la dominación del mundo), cruzando sobre cualquier contaminación que haya causado para salvar a su novia Tawna, un bandicoot femenino",
+    "price": 15000,
+    "thumbnail": "https://i.ytimg.com/vi/gAKmbdL7Ic0/maxresdefault.jpg",
+    "code": "cah",
+    "stock": 22,
+    "id": 5
+  },
+  {
+    "title": "NBA",
+    "descripcion": "Reúne a tu escuadrón y disfruta de muchísima acción auténtica con la pelota con tus modos favoritos de NBA 2K, incluyendo opciones personalizadas ilimitadas de MyPLAYER en MyCAREER. Colecciona una cantidad impresionante de leyendas y forma el equipo perfecto en MyTEAM y más, incluidos los nuevos desafíos Mamba Moments. ¡Nos vemos en la cancha",
+    "price": 124000,
+    "thumbnail": "https://media.tycsports.com/files/2022/09/06/475118/nba-2k23_862x485_wmk.webp",
+    "code": "nb",
+    "stock": 22,
+    "id": 7
+  },
+  {
+    "title": "Horizon",
+    "descripcion": "Juego de aventuras en mundo abierto, con dosis acción y exploración en tercera persona a cargo de Guerrilla Games.",
+    "price": 124000,
+    "thumbnail": "https://dudeitstime.com/wp-content/uploads/2022/01/horizon-forbidden-west-preorder.jpg",
+    "code": "hrz",
+    "stock": 22,
+    "id": 8
+  },
+  {
+    "title": "Counter",
+    "descripcion": "Juego de disparos en primera persona tipo multijugador creado por Valve Corporation y publicado por Sierra Entretainment.",
+    "price": 84000,
+    "thumbnail": "https://cdn.akamai.steamstatic.com/steam/apps/10/capsule_616x353.jpg?t=1666823513",
+    "code": "cnt",
+    "stock": 22,
+    "id": 9
+  }
+]

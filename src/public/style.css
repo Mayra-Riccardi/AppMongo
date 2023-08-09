@@ -1,0 +1,230 @@
+#logo {
+    width: 12rem;
+    height: auto;
+    padding: 0;
+    cursor: pointer; }
+  
+  .navHover:hover {
+    color: #AEA4F2;
+    text-decoration: underline; }
+  
+  .txtColor, .txtColorCarrito {
+    --bs-text-opacity: 1;
+    color: black !important; }
+  
+  .txtColor:hover {
+    --bs-text-opacity: 1;
+    color: #AEA4F2 !important;
+    font-size: 1.1rem; }
+  
+  .txtColorCarrito:hover {
+    --bs-text-opacity: 1;
+    color: #AEA4F2 !important;
+    font-size: 1.6rem; }
+  
+  .carrito {
+    font-size: 1.5rem; }
+  
+  .footerSize {
+    min-height: 4rem; }
+  
+  /*txtColor se encuentra en _footer.scss*/
+  .cuerpo {
+    font-family: "Arvo", serif !important; }
+  
+  .formMap {
+    min-width: 40% !important; }
+  
+  #googleMaps {
+    width: 100%;
+    height: 30rem; }
+  
+  .focusColor:focus {
+    color: #000000;
+    background-color: #fff;
+    border-color: #AEA4F2;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #aea4f294; }
+  
+  .botonPersonalizado, .botonPersonalizado:hover {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    border: 2px solid #AEA4F2;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    background-color: #fff;
+    color: #111;
+    cursor: pointer;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none; }
+  
+  .botonPersonalizado:hover {
+    border: 2px solid #AEA4F2;
+    background-color: #AEA4F2;
+    color: #fff;
+    cursor: pointer; }
+  
+  main {
+    margin-top: 5rem;
+    margin-bottom: 4rem; }
+  
+  #titulo {
+    font-size: 4rem;
+    color: white; }
+  
+  .mainHome {
+    margin-top: 5rem;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    height: 80vh;
+    align-items: flex-end;
+    animation-name: imgRotate;
+    background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
+    animation-iteration-count: infinite;
+    animation-duration: 10s; }
+  
+  @keyframes imgRotate {
+    0% {
+      background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada3.jpeg);
+      background-size: cover;
+      display: flex;
+      align-items: center; }
+    25% {
+      background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada2.jpeg);
+      background-size: cover;
+      display: flex;
+      align-items: center; }
+    50% {
+      background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada.jpeg);
+      background-size: cover;
+      display: flex;
+      align-items: center; }
+    75% {
+      background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada4.jpeg);
+      background-size: cover;
+      display: flex;
+      align-items: center; }
+    100% {
+      background: linear-gradient(rgba(26, 26, 26, 0.3), rgba(26, 26, 26, 0.3)), url(../images/portada5.jpeg);
+      background-size: cover;
+      display: flex;
+      align-items: center; } }
+  
+  .seccion_datos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 0.5px solid #00000000;
+    margin-bottom: 2rem;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 15rem; }
+  
+  .imgCard {
+    width: -webkit-fill-available; }
+  
+  #sectionAdopta__table th {
+    padding: 8px;
+    text-align: center; }
+  
+  #sectionAdopta__table td {
+    padding: 8px;
+    text-align: center; }
+  
+  .alink {
+    --bs-text-opacity: 1;
+    color: black !important;
+    display: inline; }
+  
+  .alink:hover {
+    --bs-text-opacity: 1;
+    color: #AEA4F2 !important; }
+  
+  .montoDonacion {
+    font-size: 1rem;
+    margin-bottom: 1rem; }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto; }
+  
+  .altotexto {
+    height: 3rem; }
+  
+  .notificacion {
+    font-size: 0.7rem; }
+  
+  .sinProducto {
+    margin-top: 5rem; }
+  
+  .imgCarrito {
+    width: 35%;
+    height: auto; }
+  
+  .cantidadCarrito {
+    height: 1rem !important;
+    width: 50%;
+    align-content: center;
+    padding-top: 0.7rem !important; }
+  
+  .carrito {
+    color: black; }
+  
+  .montoCarrito {
+    font-size: 1.3rem;
+    margin: 0.1rem; }
+  
+  .columnaNombreCarrito {
+    width: 11rem; }
+  
+  .card-text-carrito {
+    font-size: 0.8rem;
+    margin: 0; }
+  
+  .botonPersonalizadoCompra {
+    font-size: 1rem; }
+  
+  .botonPersonalizadoCompra:hover {
+    border: 1px solid #AEA4F2;
+    background-color: #AEA4F2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem; }
+  
+  .display-none {
+    display: none; }
+  
+  .botonPersonalizadoTrash, .botonPersonalizadoTrash:hover {
+    text-align: center;
+    font-size: 1rem;
+    border: 2px solid #AEA4F2;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    background-color: #fff;
+    color: #111;
+    cursor: pointer;
+    text-decoration: none; }
+  
+  .botonPersonalizadoTrash:hover {
+    border: 2px solid #AEA4F2;
+    background-color: #AEA4F2;
+    color: #fff;
+    cursor: pointer; }
+  
+  .toastyExito {
+    text-align: center;
+    font-size: 0.8rem;
+    border-radius: 3%;
+    background-color: green;
+    color: #111;
+    cursor: pointer; }
+  
+  .carritoVacio {
+    justify-content: center;
+    align-content: center; }
