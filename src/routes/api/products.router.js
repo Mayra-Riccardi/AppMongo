@@ -85,8 +85,10 @@ router.delete("/:pid", async (req, res) => {
             return res.status(404).json({ status: 404, message: `The product with the id ${id} is not found, please try with a different ID` });
         } 
         const updatedProducts = await productManager.getProducts();
+
         req.io.emit('updateProducts', updatedProducts); // Aquí está la emisión del evento 'updateProducts'
         return res.status(200).json({ status: 200, message: `Product with ID: ${id}, successfully deleted` });
+        
     } catch (error) {
         console.log("Error deleting the product", error);
         res.status(500).json({ error: 'Error deleting the product' });

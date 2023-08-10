@@ -6,10 +6,12 @@ const path = require('path');
 
 const mongoose = require('mongoose');
 const productModel = require('../dao/models/ProductModel');
+const envConfig = require('../env.config')
+const dbConfig = require('../db/config')
 
 
 const seed = async () => {
-    await mongoose.connect("mongodb+srv://user1:user1@epicgamerworld.kklvu6n.mongodb.net/epicgamerworld?retryWrites=true&w=majority")
+    await mongoose.connect(dbConfig.mongodb.connectTo(`${envConfig.DB_NAME}`))
     
     const filepath = path.join(__dirname, '../', 'data/products.json');
     const data = await fs.readFile(filepath, 'utf-8');

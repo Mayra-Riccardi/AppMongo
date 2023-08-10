@@ -7,9 +7,11 @@
   const { Server } = require("socket.io");
   const socketManager = require('./websocket')
   const mongoose = require('mongoose')
+  const envConfig = require('./env.config')
+  const dbConfig = require('./db/config')
 
   try {
-    await mongoose.connect("mongodb+srv://user1:user1@epicgamerworld.kklvu6n.mongodb.net/epicgamerworld?retryWrites=true&w=majority")
+    await mongoose.connect(dbConfig.mongodb.connectTo(`${envConfig.DB_NAME}`))
     console.log('App conected to database')
 
     const app = express();
