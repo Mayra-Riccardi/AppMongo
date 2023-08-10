@@ -1,15 +1,15 @@
 const {Router} = require("express")
-const CartsManager = require("../../dao/managers/carts/CartManager.fs")
-const path = require("path");//importo el modulo de fileSystemPath para pasar de una manera más facil la ruta donde voy a almacenar mis productos.
-const filePath = path.join(__dirname, "..", "..", "data", "carts.json");
+const cartManager = require("../../dao/managers/carts/CartManager.db")
+//const path = require("path");//importo el modulo de fileSystemPath para pasar de una manera más facil la ruta donde voy a almacenar mis productos.
+//const filePath = path.join(__dirname, "..", "..", "data", "carts.json");
 
-const cartsManager = new CartsManager(filePath)
+//const cartsManager = new CartsManager(filePath)
 const router = Router()
 
 router.post("/", async (req, res) => {
     const {body} = req
     try{
-        const cart = await cartsManager.addCart(body)
+        const cart = await cartManager.addcart(body)
 
         if (cart) {
             res.status(200).json({ status: 200, message: 'Cart added successfully', cart});
@@ -26,7 +26,7 @@ router.get("/:cid", async (req, res) => {
     const id = req.params.cid
 
     try{
-        const cart = await cartsManager.getCartById(+id)
+        const cart = await cartManager.getCartById(id)
 
         if(cart){
             res.status(200).json({ status: 200, cart });
@@ -44,7 +44,7 @@ router.post("/:cid/product/:pid", async (req, res) => {
     const cartId = req.params.cid;
     const productId = req.params.pid;
 
-    const result = await cartsManager.addProductToCart(cartId, productId)
+    const result = await cartManager.addProductToCart(cartId, productId)
 
     if(result === "Product not found"){
         res.status(404).send({status: 404, message: `Product with id: ${productId} not found`});
