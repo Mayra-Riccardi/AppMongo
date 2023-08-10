@@ -1,28 +1,36 @@
-const cartModel = require('../../models/CartModel')
+const cartModel = require('../../models/CartModel');
+const productModel = require('../../models/ProductModel')
 
 class CartManager {
-
     async getCartById(id) {
-        const cart = await cartModel.findOne({ _id: id })
-
-        return cart;
+        try {
+            const cart = await cartModel.findOne({ _id: id });
+            return cart;
+        } catch (error) {
+            console.error('Error getting cart by ID:', error);
+            throw error;
+        }
     }
 
-
-    async addcart() {
-        const cart = await cartModel.create({ products: [] })
-
-        return cart
+    async addCart() {
+        try {
+            const cart = await cartModel.create({ products: [] });
+            return cart;
+        } catch (error) {
+            console.error('Error creating cart:', error);
+            throw error;
+        }
     }
-
     async addProductToCart(cid, pid) {
-
-        //buscar el carrito en el que quiero agregar el producto
-        const cart = await cartModel.findOne({ _id: cid });
-        //si lo encuentro, buscar el producto
-        if (cart._id != '') {
-            //buscar si el producto ya existe
+        try {
+            const cart = await cartModel.findOne({ _id: cid });
+    
+            if (!cart) {
+                return { cartNotFound: true };
+            }
+    
             const existing = cart.products.find((prod) => prod.product == pid);
+    
             if (existing) {
                 cart.products.forEach((prod, index) => {
                     if (prod.product == pid) {
@@ -30,14 +38,26 @@ class CartManager {
                     }
                 });
             } else {
-                cart.products = [...cart.products, { product: pid, quantity: 1 }]
+                // Verificar si el producto existe en la base de datos antes de agregarlo al carrito
+                const product = await productModel.findOne({ _id: pid });
+    
+                if (!product) {
+                    return { productNotFound: true };
+                }
+    
+                cart.products = [...cart.products, { product: pid, quantity: 1 }];
             }
+    
+            const cartUpdated = await cartModel.updateOne({ _id: cid }, { $set: { products: cart.products } });
+    
+            return { cartUpdated };
+        } catch (error) {
+            console.error('Error adding product to cart:', error);
+            throw error;
         }
-        const cartUpdated = await cartModel.updateOne({ _id: cid }, { $set: { products: cart.products } });
-
-
-        return cartUpdated
     }
+    
+      
 }
 
 module.exports = new CartManager();

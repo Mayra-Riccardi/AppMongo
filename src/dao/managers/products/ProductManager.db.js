@@ -1,41 +1,62 @@
 const productsModel = require('../../models/ProductModel');
 
-
 class ProductManager {
 
   async getProducts() {
-    const products = await productsModel.find().lean();
-
-    return products;
+    try {
+      const products = await productsModel.find().lean();
+      return products;
+    } catch (error) {
+      console.log('Error getting products:', error);
+      throw error;
+    }
   }
 
   async getById(id) {
-    const resultado = await productsModel.find({ _id: id }).lean();
-
-    return resultado[0];
-  };
+    try {
+      const resultado = await productsModel.find({ _id: id }).lean();
+      return resultado[0];
+    } catch (error) {
+      console.log('Error getting product by ID:', error);
+      throw error;
+    }
+  }
 
   async addProduct(body) {
-    const product = await productsModel.create(body);
-
-    return product;
+    try {
+      const product = await productsModel.create(body);
+      return product;
+    } catch (error) {
+      console.log('Error adding product:', error);
+      throw error;
+    }
   }
 
   async updateProduct(id, product) {
-    const result = await productsModel.updateOne({ _id: id }, product);
-
-    return result;
+    try {
+      const result = await productsModel.updateOne({ _id: id }, product);
+      return result;
+    } catch (error) {
+      console.log('Error updating product:', error);
+      throw error;
+    }
   }
 
   async deleteProduct(id) {
-    const result = await productsModel.deleteOne({ _id: id });
+    try {
+      const result = await productsModel.deleteOne({ _id: id });
 
-    if (result.deletedCount === 0) {
-        return null; // Indicar que el producto no se encontró
+      if (result.deletedCount === 0) {
+          return null; // Indicate that the product was not found
+      }
+
+      return result;
+    } catch (error) {
+      console.log('Error deleting product:', error);
+      throw error;
     }
-
-    return result;
-}
+  }
 
 }
+
 module.exports = new ProductManager();

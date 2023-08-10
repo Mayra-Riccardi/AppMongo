@@ -7,9 +7,9 @@ const cartManager = require("../../dao/managers/carts/CartManager.db")
 const router = Router()
 
 router.post("/", async (req, res) => {
-    const {body} = req
+    //const {body} = req
     try{
-        const cart = await cartManager.addcart(body)
+        const cart = await cartManager.addCart()
 
         if (cart) {
             res.status(200).json({ status: 200, message: 'Cart added successfully', cart});
@@ -17,6 +17,7 @@ router.post("/", async (req, res) => {
             res.status(400).json({ status: 404, message: 'Failed to add the Cart' });
           }
         } catch (error) {
+            console.log(error)
           res.status(500).json({status: 500, message: 'Error processing the request' });
         }
     }
@@ -40,24 +41,24 @@ router.get("/:cid", async (req, res) => {
 })
 
 router.post("/:cid/product/:pid", async (req, res) => {
-    try{
-    const cartId = req.params.cid;
-    const productId = req.params.pid;
+    try {
+        const cartId = req.params.cid;
+        const productId = req.params.pid;
 
-    const result = await cartManager.addProductToCart(cartId, productId)
+        const result = await cartManager.addProductToCart(cartId, productId)
 
-    if(result === "Product not found"){
-        res.status(404).send({status: 404, message: `Product with id: ${productId} not found`});
-    } else if (result === "Cart not found") {
-        res.status(404).send({status: 404, message: `Cart with id: ${cartId} not found`})
-    } else {
-        res.status(200).send({status: 200, message: `Product with id: ${productId} added to cart`})
-    } 
-} catch (err) {
-        console.error("Error adding product to cart", err)
-
-        res.status(500).send({status: 500, message: "An error has occured while adding the product to the cart"})
+        if (result.cartNotFound) {
+            res.status(404).send({ status: 404, message: `Cart with id: ${cartId} not found` });
+        } else if (result.productNotFound) {
+            res.status(404).send({ status: 404, message: `Product with id: ${productId} not found` });
+        } else {
+            res.status(200).send({ status: 200, message: `Product with id: ${productId} added to cart` });
+        }
+    } catch (err) {
+        console.error("Error adding product to cart", err);
+        res.status(500).send({ status: 500, message: "An error has occurred while adding the product to the cart" });
     }
-})
+});
+
 
 module.exports = router
