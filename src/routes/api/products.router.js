@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
     try {
       const product = await productManager.addProduct(body);
   
-      if (product) {
+      if (product !== null) {
         const updatedProducts = await productManager.getProducts();
         req.io.emit('updateProducts', updatedProducts); // Aquí está la emisión del evento 'updateProducts'
         res.status(200).json({ status: 200, message: 'Product added successfully', product });

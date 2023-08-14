@@ -1,0 +1,29 @@
+<main>
+    <section class="container seccionDonacion">
+        <div class="page-content page-container" id="page-content">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card card-bordered" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px; margin: 20px; overflow: hidden;">
+                            <div class="card-header" style="background-color: #f3e1a5; color: white; padding: 10px;">
+                                <h4 class="card-title" style="margin: 0; font-size: 1.5rem;"><strong>Chat</strong></h4>
+                            </div>
+                            <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height: 400px !important; background-color: white; border: 1px solid #ccc; max-height: 300px; padding: 10px; border-radius: 5px;">
+                                <!-- mensajes aca -->
+                            </div>
+                            <div class="publisher bt-1 border-light" style="display: flex; align-items: center; padding: 10px; background-color: white; border-top: 1px solid #ccc;">
+                                <input id="inputName" class="publisher-input" style="max-width: 100px; flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px;" type="text" placeholder="Nombre">
+                                <input id="inputMessage" class="publisher-input" style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px;" type="text" placeholder="Ingrese mensaje">
+                                <button id="sendMessageButton" class="btn btn-primary" style="padding: 8px 12px; border-radius: 5px;">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/static/index.js" defer></script>
+<script src="/static/chat.js" defer></script>
+

@@ -1,5 +1,7 @@
 const {Router} = require("express")
 const cartManager = require("../../dao/managers/carts/CartManager.db")
+const cartModel = require('../../dao/models/CartModel');
+
 //const path = require("path");//importo el modulo de fileSystemPath para pasar de una manera más facil la ruta donde voy a almacenar mis productos.
 //const filePath = path.join(__dirname, "..", "..", "data", "carts.json");
 
@@ -51,8 +53,11 @@ router.post("/:cid/product/:pid", async (req, res) => {
             res.status(404).send({ status: 404, message: `Cart with id: ${cartId} not found` });
         } else if (result.productNotFound) {
             res.status(404).send({ status: 404, message: `Product with id: ${productId} not found` });
-        } else {
-            res.status(200).send({ status: 200, message: `Product with id: ${productId} added to cart` });
+        } else if (result.cartUpdated) {
+            // Obtener el carrito actualizado después de agregar el producto
+            const updatedCart = await cartModel.findOne({ _id: cartId });
+
+            res.status(200).send({ status: 200, message: `Product with id: ${productId} added to cart`, cart: updatedCart });
         }
     } catch (err) {
         console.error("Error adding product to cart", err);

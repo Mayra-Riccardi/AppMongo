@@ -24,13 +24,24 @@ class ProductManager {
 
   async addProduct(body) {
     try {
+      // Verificar si ya existe un producto con el mismo codigo
+      const existingProduct = await productsModel.findOne({ code: body.code });
+      if (existingProduct) {
+        return null;      }
+  
+      // Verificar si faltan campos requeridos
+      if (!body.title || !body.price || !body.thumbnail || !body.stock) {
+        return null;      }
+  
+      // Agregar el producto si todo está en orden
       const product = await productsModel.create(body);
       return product;
     } catch (error) {
-      console.log('Error adding product:', error);
+      console.log('Error adding product:', error.message);
       throw error;
     }
   }
+  
 
   async updateProduct(id, product) {
     try {
