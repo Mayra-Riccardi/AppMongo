@@ -27,8 +27,8 @@ El proyecto utiliza MongoDB Atlas como base de datos para almacenar productos, c
 Para comenzar, busca el archivo .env.example donde trendrás un ejemplo de lo que debes incluir al crear el archivo .env 
 Deberás aagregar lo siguiente:
 
-### DB_NAME="YOUR DB NAME, FOR DEFAULT IT WILL BE TEST"
-### DB_PASSWORD="YOUR DB PASSWORD"
+##### DB_NAME="YOUR DB NAME, FOR DEFAULT IT WILL BE TEST"
+##### DB_PASSWORD="YOUR DB PASSWORD"
 
 
 ### Seed de Productos
