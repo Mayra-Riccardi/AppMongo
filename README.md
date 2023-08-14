@@ -25,7 +25,7 @@ El servidor está configurado para utilizar el motor de plantillas Handlebars y 
 El proyecto utiliza MongoDB Atlas como base de datos para almacenar productos, carritos y mensajes del chat. Se requiere configurar una variable de entorno en el archivo .env con la URI de conexión de MongoDB Atlas.
 
 Para comenzar, busca el archivo .env.example donde trendrás un ejemplo de lo que debes incluir al crear el archivo .env 
-Crea el archivo .end en donde deberás aagregar lo siguiente:
+Crea el archivo .env en donde deberás aagregar lo siguiente:
 
 ##### DB_NAME="YOUR DB NAME, FOR DEFAULT IT WILL BE TEST"
 ##### DB_PASSWORD="YOUR DB PASSWORD"
