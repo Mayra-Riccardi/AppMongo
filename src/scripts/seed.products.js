@@ -6,8 +6,11 @@ const path = require('path');
 
 const mongoose = require('mongoose');
 const productModel = require('../dao/models/ProductModel');
-const envConfig = require('../env.config')
-const dbConfig = require('../db/config')
+const envConfig = require('./src/env.config')
+const dbConfig = require('./db/config')
+console.log('variables', envConfig)
+console.log(dbConfig)
+console.log(envConfig.DB_PASSWORD)
 
 
 const seed = async () => {

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/app.js",
     "start-express": "nodemon app.js",
-    "seed:products": "node ./src/scripts/seed.products.js"
+    "seed:products": "node -r dotenv/config ./src/scripts/seed.products.js"
   },
   "keywords": [],
   "author": "",

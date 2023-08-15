@@ -1,4 +1,5 @@
 const envConfig = require('../env.config');
+console.log(envConfig)
 
 
 module.exports = {
