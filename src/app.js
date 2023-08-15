@@ -43,7 +43,7 @@
     const port = 8080;//definimos puerto
 
     server.listen(port, () => {
-      console.log(`🚀 Server is up and running on port ${port} 🚀`);//lo ponemos a escuchar y levantamso el servidor
+      console.log(`🚀 Server is up and running on port ${port} 🚀`);//lo ponemos a escuchar y levantamos el servidor
     });
   } catch (err) {
     console.log(err, 'Error ocurrered when try to connect to database')
